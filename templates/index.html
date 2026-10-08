@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GitHub Roast & Rescue</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🔥 GitHub Roast
+        </div>
+
+        <div class="nav-text">
+            Roast • Analyze • Rescue
+        </div>
+
+    </nav>
+
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                AI POWERED DEVELOPER ANALYZER
+            </span>
+
+            <h1>
+                Your GitHub deserves
+                <span>the truth.</span>
+            </h1>
+
+            <p>
+                Enter a GitHub username and get an honest
+                AI-powered review of your developer profile,
+                projects and portfolio.
+            </p>
+
+
+            <form method="POST"
+                  class="search-box">
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter GitHub username..."
+                    required
+                >
+
+                <button type="submit">
+                    Analyze Profile 🚀
+                </button>
+
+            </form>
+
+
+            {% if error %}
+
+            <div class="error">
+                {{ error }}
+            </div>
+
+            {% endif %}
+
+
+            <div class="features">
+
+                <div>
+                    <strong>🔥 Roast</strong>
+                    <span>Honest feedback</span>
+                </div>
+
+                <div>
+                    <strong>📊 Score</strong>
+                    <span>Profile analysis</span>
+                </div>
+
+                <div>
+                    <strong>🚀 Rescue</strong>
+                    <span>Action plan</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        Built with Flask + GitHub API + Gemini AI
+    </footer>
+
+</body>
+
+</html>

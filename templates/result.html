@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ profile.username }} - GitHub Analysis
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🔥 GitHub Roast
+    </div>
+
+    <a href="/" class="back-button">
+        ← Analyze Another
+    </a>
+
+</nav>
+
+
+<main class="dashboard">
+
+
+    <section class="profile-card">
+
+        <img
+            src="{{ profile.avatar }}"
+            alt="Profile"
+            class="avatar"
+        >
+
+        <div>
+
+            <h1>
+                {{ profile.name or profile.username }}
+            </h1>
+
+            <p>
+                @{{ profile.username }}
+            </p>
+
+            {% if profile.bio %}
+            <p class="bio">
+                {{ profile.bio }}
+            </p>
+            {% endif %}
+
+            <div class="profile-stats">
+
+                <span>
+                    👥 {{ profile.followers }} Followers
+                </span>
+
+                <span>
+                    📦 {{ profile.public_repos }} Repositories
+                </span>
+
+                <span>
+                    📍 {{ profile.location or "Location not set" }}
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="score-section">
+
+        <div class="main-score">
+
+            <div class="score-number">
+                {{ analysis.score }}
+            </div>
+
+            <div>
+                <h2>Overall Score</h2>
+                <p>GitHub Portfolio Health</p>
+            </div>
+
+        </div>
+
+
+        <div class="score-grid">
+
+            <div class="score-card">
+                <h3>Profile</h3>
+                <strong>
+                    {{ analysis.profile_score }}
+                </strong>
+            </div>
+
+            <div class="score-card">
+                <h3>Projects</h3>
+                <strong>
+                    {{ analysis.project_score }}
+                </strong>
+            </div>
+
+            <div class="score-card">
+                <h3>Activity</h3>
+                <strong>
+                    {{ analysis.activity_score }}
+                </strong>
+            </div>
+
+            <div class="score-card">
+                <h3>Documentation</h3>
+                <strong>
+                    {{ analysis.documentation_score }}
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="roast rescue">
+
+        <div class="roast-card">
+
+            <h2>🔥 AI Roast</h2>
+
+            <p>
+                {{ analysis.roast }}
+            </p>
+
+        </div>
+
+
+        <div class="rescue-card">
+
+            <h2>🚀 Rescue Priority</h2>
+
+            <p>
+                {{ analysis.priority }}
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="two-column">
+
+
+        <div class="content-card">
+
+            <h2>💪 Strengths</h2>
+
+            <ul>
+
+                {% for item in analysis.strengths %}
+
+                <li>
+                    {{ item }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+
+        <div class="content-card">
+
+            <h2>⚠️ Weaknesses</h2>
+
+            <ul>
+
+                {% for item in analysis.weaknesses %}
+
+                <li>
+                    {{ item }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section class="content-card">
+
+        <h2>🚀 Rescue Plan</h2>
+
+        <div class="recommendations">
+
+            {% for item in analysis.recommendations %}
+
+            <div class="recommendation">
+
+                <span>
+                    {{ loop.index }}
+                </span>
+
+                <p>
+                    {{ item }}
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <section class="content-card career">
+
+        <h2>💼 Career Advice</h2>
+
+        <p>
+            {{ analysis.career_advice }}
+        </p>
+
+    </section>
+
+
+    <section class="repositories">
+
+        <h2>📂 Recent Repositories</h2>
+
+        <div class="repo-grid">
+
+            {% for repo in profile.repositories[:12] %}
+
+            <div class="repo-card">
+
+                <h3>
+                    {{ repo.name }}
+                </h3>
+
+                <p>
+                    {{ repo.description or
+                    "No description provided." }}
+                </p>
+
+                <div class="repo-info">
+
+                    <span>
+                        💻 {{ repo.language or "Unknown" }}
+                    </span>
+
+                    <span>
+                        ⭐ {{ repo.stars }}
+                    </span>
+
+                    <span>
+                        🍴 {{ repo.forks }}
+                    </span>
+
+                </div>
+
+                <a href="{{ repo.html_url }}"
+                   target="_blank">
+
+                    View Repository →
+
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+    GitHub Roast & Rescue • AI Developer Portfolio Analyzer
+</footer>
+
+
+</body>
+
+</html>

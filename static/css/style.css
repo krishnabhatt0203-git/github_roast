@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.navbar {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    border-bottom: 1px solid #252b40;
+    background: #0d1326;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-text {
+    color: #aab2c5;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #394158;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.hero {
+    min-height: calc(100vh - 130px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: #211b32;
+    color: #c6a7ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #ff6b35;
+}
+
+.hero p {
+    color: #aeb6ca;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.search-box {
+    display: flex;
+    max-width: 650px;
+    margin: 35px auto;
+    background: #151c31;
+    border: 1px solid #303950;
+    border-radius: 12px;
+    padding: 7px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.search-box button {
+    border: none;
+    background: #ff6b35;
+    color: white;
+    padding: 0 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 45px;
+}
+
+.features div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.features span {
+    color: #8e98ad;
+    font-size: 14px;
+}
+
+.error {
+    background: #451c25;
+    border: 1px solid #823444;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+footer {
+    text-align: center;
+    color: #717b91;
+    padding: 25px;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.profile-card {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: #151c31;
+    border: 1px solid #29334b;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid #ff6b35;
+}
+
+.profile-card h1 {
+    margin-bottom: 5px;
+}
+
+.bio {
+    margin-top: 12px;
+    color: #aeb6ca;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 18px;
+    color: #aeb6ca;
+    font-size: 14px;
+}
+
+.score-section {
+    margin-top: 25px;
+}
+
+.main-score {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #151c31;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.score-number {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ff6b35;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main-score p {
+    color: #8993aa;
+    margin-top: 5px;
+}
+
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.score-card {
+    background: #151c31;
+    padding: 22px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.score-card h3 {
+    color: #8f99af;
+    margin-bottom: 10px;
+}
+
+.score-card strong {
+    font-size: 30px;
+}
+
+.rescue {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.roast-card,
+.rescue-card,
+.content-card {
+    background: #151c31;
+    border: 1px solid #29334b;
+    padding: 25px;
+    border-radius: 14px;
+}
+
+.roast-card {
+    border-left: 4px solid #ff4d4d;
+}
+
+.rescue-card {
+    border-left: 4px solid #47d16c;
+}
+
+.roast-card p,
+.rescue-card p {
+    color: #b6bed0;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.content-card {
+    margin-top: 20px;
+}
+
+.content-card h2 {
+    margin-bottom: 20px;
+}
+
+.content-card ul {
+    list-style: none;
+}
+
+.content-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid #29334b;
+    color: #b9c1d2;
+}
+
+.recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recommendation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #10172a;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.recommendation span {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff6b35;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.recommendation p {
+    color: #b9c1d2;
+}
+
+.career p {
+    color: #b9c1d2;
+    line-height: 1.7;
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.repo-card {
+    background: #151c31;
+    border: 1px solid #29334b;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.repo-card h3 {
+    margin-bottom: 10px;
+}
+
+.repo-card p {
+    color: #8f99af;
+    min-height: 60px;
+    line-height: 1.5;
+}
+
+.repo-info {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0;
+    font-size: 13px;
+    color: #aeb6ca;
+}
+
+.repo-card a {
+    color: #ff8b65;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.repositories {
+    margin-top: 40px;
+}
+
+.repositories > h2 {
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-box button {
+        padding: 15px;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .score-grid,
+    .repo-grid,
+    .two-column,
+    .rescue {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
